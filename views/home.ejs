@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Metro City Bus</title>
+        <style>
+            body{
+                font-family: arial;
+                margin: 0;
+            }
+            nav{
+                background: #3b82f6;
+                padding: 20px 10px;
+            }
+            nav ul{
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 0;
+                text-align: center;
+            }
+            nav li{
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 10px 0 0;
+            }
+            nav a{
+                color: #fff;
+                font-size: 18px;
+                background: rgba(255,255,255,0.2);
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+            }
+            main, header{
+                max-width: 960px;
+                margin: 30px auto;
+                padding: 0 10px;
+                color: #333;
+            }
+            .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 20px; /* Gap between items */
+      align-items: center; /* Center items vertically */
+    }
+    
+    .text {
+      padding: 20px;
+      background-color: #f0f0f0;
+      height: 100%; /* Ensure full height of container */
+      box-sizing: border-box; /* Include padding in height calculation */
+    }
+    
+    .image {
+      text-align: center; /* Center image horizontally */
+    }
+    
+    .image img {
+      max-width: 100%; /* Ensure the image doesn't exceed its container */
+      max-height: 100%;
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove any inline spacing issues */
+    }
+
+    /* Flexbox for responsive layout */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+      }
+    }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <% if (user) { %>
+                <li><a href="/auth/logout">Log out</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Welcome To Metro City Bus Project </h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="text">
+                  <h2>City Metro Bus</h2>
+                  <p>Enjoy The Ride 😊😁😍</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed ut purus eu nulla rhoncus sagittis non ac nulla. 
+                    Fusce pulvinar magna nec nisi vestibulum, in aliquet sem malesuada. 
+                    Suspendisse in ipsum quis justo sodales interdum. Nulla vel pretium justo. 
+                    Morbi fringilla massa nec sapien suscipit, at volutpat velit varius. 
+                    Sed a dolor eu mauris lobortis commodo vel eget eros. Nulla facilisi. 
+                    Nunc elementum, dui vel lobortis elementum, felis urna bibendum mi, 
+                    nec vehicula nisl ex ut arcu
+                  </p>
+                </div>
+                <div class="image">
+                  <img src="/images/metroBus.jpg" alt="Image Description">
+                </div>
+              </div>
+
+        </main>
+    </body>
+</html>
