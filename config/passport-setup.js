@@ -1,6 +1,5 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-//const keys = require('./keys');
 require('dotenv/config');
 const User = require('../models/user-model');
 
@@ -14,20 +13,15 @@ passport.deserializeUser((id, done) => {
     });
 });
 
-
 passport.use(
     new GoogleStrategy({
-        // options for google strategy
-
-        // clientID: keys.google.clientID,
-        // clientSecret: keys.google.clientSecret,
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         callbackURL: '/auth/google/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
-        User.findOne({googleId: profile.id}).then((currentUser) => {
-            if(currentUser){
+        User.findOne({ googleId: profile.id }).then((currentUser) => {
+            if (currentUser) {
                 // already have this user
                 console.log('user is: ', currentUser);
                 done(null, currentUser);
@@ -36,8 +30,7 @@ passport.use(
                 new User({
                     googleId: profile.id,
                     username: profile.displayName,
-                    thumbnail: profile._json.image && profile._json.image.url
-                    //thumbnail: profile._json.image.url
+                    thumbnail: profile.photos[0].value // updated to use profile.photos
                 }).save().then((newUser) => {
                     console.log('created new user: ', newUser);
                     done(null, newUser);

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro City Bus</title>
     <style>
         body {
@@ -10,21 +11,31 @@
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrolling */
             box-sizing: border-box;
+            background-color: #f9f9f9; /* Added background color for consistency */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
         nav {
             background: #3b82f6;
             padding: 20px 10px;
+            width: 100%;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
         nav ul {
             max-width: 960px;
             margin: 0 auto;
             padding: 0;
             text-align: center;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensure items wrap in case of smaller screens */
         }
         nav li {
-            list-style-type: none;
-            display: inline-block;
-            margin: 0 10px 0 0;
+            margin: 10px 10px; /* Ensure proper spacing on smaller screens */
         }
         nav a {
             color: #fff;
@@ -33,12 +44,17 @@
             text-decoration: none;
             padding: 10px;
             display: block;
+            border-radius: 5px;
         }
         main, header {
             max-width: 960px;
             margin: 30px auto;
             padding: 0 10px;
-            color: #333;
+            text-align: center;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        header h1 {
+            font-size: 2em;
         }
         .container {
             display: grid;
@@ -49,7 +65,6 @@
         .text {
             padding: 20px;
             background-color: #f0f0f0;
-            height: 100%; /* Ensure full height of container */
             box-sizing: border-box; /* Include padding in height calculation */
         }
         .image {
@@ -59,39 +74,38 @@
             max-width: 100%; /* Ensure the image doesn't exceed its container */
             height: auto; /* Maintain aspect ratio */
             display: block; /* Remove any inline spacing issues */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
         }
         footer {
             margin-top: auto;
             background: #3b82f6;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 10px;
+            width: 100%;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
-        /* Laptop view (between 1024px and 769px) */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .container {
-                grid-template-columns: 1fr; /* Single column layout */
-            }
-            nav a{
-              font-size: 50px;
-            }
-            h1 {
-              text-align: center;
-            }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
         }
         /* Tablet view (between 768px and 601px) */
-        @media (max-width: 768px) and (min-width: 601px) {
+        @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Single column layout */
             }
             nav ul {
-                text-align: left;
+                flex-direction: column;
+                text-align: center;
             }
             nav li {
                 display: block;
                 margin: 5px 0;
+            }
+            nav a {
+                padding: 10px 20px;
             }
         }
         /* Phone view (less than 600px) */
@@ -100,11 +114,15 @@
                 grid-template-columns: 1fr; /* Single column layout */
             }
             nav ul {
-                text-align: left;
+                flex-direction: column;
+                text-align: center;
             }
             nav li {
                 display: block;
                 margin: 5px 0;
+            }
+            nav a {
+                padding: 10px 20px;
             }
         }
     </style>
@@ -127,17 +145,14 @@
     <main>
         <div class="container">
             <div class="text">
-                <h2>City Metro Bus</h2>
-                <p>Enjoy The Ride 😊😁😍</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed ut purus eu nulla rhoncus sagittis non ac nulla. 
-                    Fusce pulvinar magna nec nisi vestibulum, in aliquet sem malesuada. 
-                    Suspendisse in ipsum quis justo sodales interdum. Nulla vel pretium justo. 
-                    Morbi fringilla massa nec sapien suscipit, at volutpat velit varius. 
-                    Sed a dolor eu mauris lobortis commodo vel eget eros. Nulla facilisi. 
-                    Nunc elementum, dui vel lobortis elementum, felis urna bibendum mi, 
-                    nec vehicula nisl ex ut arcu.
+                <h2 class="tinCity">Tin City Metro Bus</h2>
+                <p class="tinUrban">
+                    The Tin City Metro Urban Transportation Initiative is aimed at mitigating the costs of
+                    intra-city travel and providing a respite from the daily transportation challenges faced by commuters. It is more than a
+                    transportation project; it is a catalyst for community
+                    development. "These buses are not mere vehicles; they are mobile hubs of innovation, equipped with the latest amenities
+                    such as Near Field Communication (NFC) and secure card payment systems. We are ushering in an era of digitised travel,
+                    aligning with the global shift towards cashless transactions for the convenience of our passengers".
                 </p>
             </div>
             <div class="image">
@@ -146,7 +161,8 @@
         </div>
     </main>
     <footer>
-        &copy; 2024 Metro City Bus. All rights reserved.
+        <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
+        <p>Contact us at <a href="">support@metrocitybus.com</a></p>
     </footer>
 </body>
 </html>
