@@ -47,6 +47,11 @@
             main p{
                 display: inline-block;
             }
+            @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+      }
+    }
         </style>
     </head>
     <body>
