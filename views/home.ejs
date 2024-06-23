@@ -4,128 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro City Bus</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            box-sizing: border-box;
-            background-color: #f9f9f9; /* Added background color for consistency */
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-        nav {
-            background: #3b82f6;
-            padding: 20px 10px;
-            width: 100%;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        nav ul {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0;
-            text-align: center;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Ensure items wrap in case of smaller screens */
-        }
-        nav li {
-            margin: 10px 10px; /* Ensure proper spacing on smaller screens */
-        }
-        nav a {
-            color: #fff;
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            border-radius: 5px;
-        }
-        main, header {
-            max-width: 960px;
-            margin: 30px auto;
-            padding: 0 10px;
-            text-align: center;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        header h1 {
-            font-size: 2em;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
-            gap: 20px; /* Gap between items */
-            align-items: center; /* Center items vertically */
-        }
-        .text {
-            padding: 20px;
-            background-color: #f0f0f0;
-            box-sizing: border-box; /* Include padding in height calculation */
-        }
-        .image {
-            text-align: center; /* Center image horizontally */
-        }
-        .image img {
-            max-width: 100%; /* Ensure the image doesn't exceed its container */
-            height: auto; /* Maintain aspect ratio */
-            display: block; /* Remove any inline spacing issues */
-        }
-        footer {
-            margin-top: auto;
-            background: #3b82f6;
-            color: #fff;
-            text-align: center;
-            padding: 20px 10px;
-            width: 100%;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: underline;
-        }
-        /* Tablet view (between 768px and 601px) */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr; /* Single column layout */
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav li {
-                display: block;
-                margin: 5px 0;
-            }
-            nav a {
-                padding: 10px 20px;
-            }
-        }
-        /* Phone view (less than 600px) */
-        @media (max-width: 600px) {
-            .container {
-                grid-template-columns: 1fr; /* Single column layout */
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav li {
-                display: block;
-                margin: 5px 0;
-            }
-            nav a {
-                padding: 10px 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <nav>
@@ -137,6 +16,7 @@
             <% } %>
             <li><a href="/">Homepage</a></li>
             <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Track Vehicle</a></li>
         </ul>
     </nav>
     <header>
@@ -160,6 +40,7 @@
             </div>
         </div>
     </main>
+    <script src="/engine.js"></script>
     <footer>
         <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
         <p>Contact us at <a href="">support@metrocitybus.com</a></p>

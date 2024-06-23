@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Info</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <% if (user) { %>
+            <li><a href="/auth/logout">Log out</a></li>
+            <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Vehicle Info</a></li>
+        </ul>
+    </nav>
+    <header>
+        <% if (user) { %>
+        <h1>Vehicle information page </h1>
+        <h2>Welcome, <%= user.username %></h2>
+        <% } else { %>
+        <h1>Welcome to the Vehicle Info page</h1>
+        <h2>View vehicle arrival / departure time?</h2>
+        <% } %>
+    </header>
+    <main>
+        <% if (user) { %>
+        <div class="container">
+            <div class="text">
+                <a href="/track-vehicle" class="track-vehicle">Track Vehicle Here</a>
+                <div class="arrival-times">
+                    <h3>Vehicle Arrival Times</h3>
+                    <ul id="arrival-times-list">
+                        <!-- Arrival times will be dynamically populated here -->
+                    </ul> <%}else { %>
+                        <h2>Login to view vehicle information</h2>
+                        <a class="google-btn" href="/auth/login">Login</a>
+                        <%} %>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/engine.js"></script>
+    <footer>
+        <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
+        <p>Contact us at <a href="">support@metrocitybus.com</a></p>
+    </footer>
+</body>
+</html>

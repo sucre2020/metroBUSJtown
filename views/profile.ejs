@@ -4,130 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f9f9f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-        nav {
-            background: #3b82f6;
-            padding: 20px 10px;
-            width: 100%;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        nav ul {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0;
-            text-align: center;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Ensure items wrap in case of smaller screens */
-        }
-        nav li {
-            margin: 10px 10px; /* Ensure proper spacing on smaller screens */
-        }
-        nav a {
-            color: #fff;
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            border-radius: 5px;
-        }
-        main, header {
-            max-width: 960px;
-            margin: 30px auto;
-            padding: 0 10px;
-            text-align: center;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        header h1 {
-            font-size: 2em;
-        }
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .profile-info img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-        .profile-info h2 {
-            margin: 0;
-        }
-        .balance {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-        .top-up, .track-vehicle {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 20px;
-            background: #3b82f6;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .arrival-times {
-            margin-top: 30px;
-            text-align: left;
-        }
-        .arrival-times h3 {
-            margin-bottom: 10px;
-        }
-        .arrival-times ul {
-            list-style: none;
-            padding: 0;
-        }
-        .arrival-times li {
-            margin: 5px 0;
-            padding: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
-        }
-        footer {
-            margin-top: auto;
-            background: #3b82f6;
-            color: #fff;
-            text-align: center;
-            padding: 20px 10px;
-            width: 100%;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                padding: 0 20px; /* Ensure nav items don't cause horizontal scrolling */
-                box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            }
-            .top-up, .track-vehicle {
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <nav>
@@ -139,6 +16,7 @@
             <% } %>
             <li><a href="/">Homepage</a></li>
             <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Track Vehicle</a></li>
         </ul>
     </nav>
     <header>
@@ -150,33 +28,18 @@
             <h2><%= user.username %></h2>
         </div>
         <div class="balance">
-            Your Balance is: <span id="user-balance"><%= user.balance %> NGR</span>
+            Your Balance is: 0.00<span id="user-balance"><%= user.balance %> NGR</span>
         </div>
-        <a href="/add-funds" class="top-up">Click Here To Top Up</a>
-        <a href="/track-vehicle" class="track-vehicle">Track Vehicle Here</a>
+        <a href="/add-funds" class="top-up">Fund Account</a>
+        <a href="/transaction" class="track-vehicle">Transactions</a>
         <div class="arrival-times">
-            <h3>Vehicle Arrival Times</h3>
+            <h3>Recent Trips</h3>
             <ul id="arrival-times-list">
                 <!-- Arrival times will be dynamically populated here -->
             </ul>
         </div>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const arrivalTimes = [
-                { vehicle: 'Bus 1', time: '10:15 AM' },
-                { vehicle: 'Bus 2', time: '10:30 AM' },
-                { vehicle: 'Bus 3', time: '10:45 AM' }
-            ];
-            
-            const arrivalTimesList = document.getElementById('arrival-times-list');
-            arrivalTimes.forEach(arrival => {
-                const li = document.createElement('li');
-                li.textContent = `${arrival.vehicle} - Arrives at: ${arrival.time}`;
-                arrivalTimesList.appendChild(li);
-            });
-        });
-    </script>
+    <script src="/engine.js"></script>
     <footer>
         <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
         <p>Contact us at <a href="">support@metrocitybus.com</a></p>
