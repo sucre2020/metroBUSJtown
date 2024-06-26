@@ -71,9 +71,17 @@ app.use("/logout", logoutRouter);
 app.get("/", (req, res) => {
   res.render("home", { user: req.user });
 });
-
+//create vehicle tracking page
 app.get("/vehicleInfo", (req, res) => {
   res.render("vehicleInfo", { user: req.user });
+});
+//create payment route
+app.get("/payticket", (req, res) => {
+  res.render("payticket", { user: req.user });
+});
+//create order/transaction history
+app.get("/transaction", (req, res) => {
+  res.render("transaction", { user: req.user });
 });
 
 // Create middlewares

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="/images/TinCityMetroUrban.jpeg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro City Bus</title>
@@ -9,23 +10,23 @@
 <body>
     <nav>
         <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Track Vehicle</a></li>
             <% if (user) { %>
             <li><a href="/auth/logout">Log out</a></li>
             <% } else { %>
             <li><a href="/auth/login">Login</a></li>
-            <% } %>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/vehicleInfo">Track Vehicle</a></li>
+            <% } %> 
         </ul>
     </nav>
     <header>
-        <h1>Welcome To Metro City Bus Project</h1>
+        <h1 class="login">Welcome To Metro City Bus Project</h1>
     </header>
     <main>
         <div class="container">
             <div class="text">
-                <h2 class="tinCity">Tin City Metro Bus</h2>
+                <h2 class="login">Tin City Metro Bus</h2>
                 <p class="tinUrban">
                     The Tin City Metro Urban Transportation Initiative is aimed at mitigating the costs of
                     intra-city travel and providing a respite from the daily transportation challenges faced by commuters. It is more than a

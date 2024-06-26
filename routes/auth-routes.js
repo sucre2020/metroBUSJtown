@@ -33,5 +33,13 @@ router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
 router.get("/vehicleInfo", (req, res) => {
   res.render("vehicleInfo", { user: req.user });
 });
+// Route for ticket payment
+router.get("/payticket", (req, res) => {
+  res.render("payticket", { user: req.user });
+});
+// Route for user transactions
+router.get("/transaction", (req, res) => {
+  res.render("transaction", { user: req.user });
+});
 
 module.exports = router;

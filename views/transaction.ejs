@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Transactions</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -20,23 +20,11 @@
         </ul>
     </nav>
     <header>
-        <h1>Welcome to your profile, <%= user.username %></h1>
+        <h1>Transactions</h1>
     </header>
-    <main>
-        <div class="profile-info">
-            <img src="<%= user.thumbnail %>" alt="User Picture" />
-            <h2><%= user.username %></h2>
-        </div>
-        <div class="balance">
-            Your Balance is: 0.00<span id="user-balance"><%= user.balance %> NGR</span>
-        </div>
-        <a href="/payticket" class="top-up">Get Ticket</a>
-        <a href="/transaction" class="track-vehicle">Transactions</a>
-        <div class="arrival-times">
-            <h3>Recent Trips</h3>
-            <ul id="arrival-times-list">
-                <!-- Arrival times will be dynamically populated here -->
-            </ul>
+    <main class="container">
+        <div class="register">
+            <h2>No Transactions Recorded Yet 🤦‍♂️</h2>
         </div>
     </main>
     <script src="/engine.js"></script>

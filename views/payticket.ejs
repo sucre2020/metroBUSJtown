@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Ticket</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Track Vehicle</a></li>
+            <% if (user) { %>
+            <li><a href="/auth/logout">Log out</a></li>
+            <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <header>
+        <h1 class="login">Get Ticket</h1>
+    </header>
+    <main class="container">
+        <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+            <div class="login">
+              Ticket is N200
+            </div>
+            <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+            <input type="hidden" name="customer[email]" value="test@mailnator.com" />
+            <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
+            <input type="hidden" name="tx_ref" value="txref-81123" />
+            <input type="hidden" name="amount" value="200" />
+            <input type="hidden" name="currency" value="NGN" />
+            <input type="hidden" name="meta[source]" value="docs-html-test" />
+            <br>
+            <button type="submit" id="start-payment-button" class="pay-btn">Pay Now</button>
+          </form>
+    </main>
+    <script src="/engine.js"></script>
+    <footer>
+        <p>&copy; 2024 Metro City Bus. All rights reserved.</p>
+        <p>Contact us at <a href="">support@metrocitybus.com</a></p>
+    </footer>
+</body>
+</html>

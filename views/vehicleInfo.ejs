@@ -9,23 +9,23 @@
 <body>
     <nav>
         <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/vehicleInfo">Vehicle Info</a></li>
             <% if (user) { %>
             <li><a href="/auth/logout">Log out</a></li>
             <% } else { %>
             <li><a href="/auth/login">Login</a></li>
             <% } %>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/vehicleInfo">Vehicle Info</a></li>
         </ul>
     </nav>
     <header>
         <% if (user) { %>
-        <h1>Vehicle information page </h1>
-        <h2>Welcome, <%= user.username %></h2>
+        <h1 class="login">Vehicle information page </h1>
+        <h2 class="login">Welcome, <%= user.username %></h2>
         <% } else { %>
-        <h1>Welcome to the Vehicle Info page</h1>
-        <h2>View vehicle arrival / departure time?</h2>
+        <h1 class="login">Track Vehicle</h1>
+        <!-- <h2></h2> -->
         <% } %>
     </header>
     <main>
